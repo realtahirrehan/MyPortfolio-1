@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">PortFolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li class="dropdown">
+                    <a href="#education">Education</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#academic">Academic</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <div class="theme-switcher">
+                        <span>Light</span>
+                        <label class="switch">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="slider"></span>
+                        </label>
+                        <span>Dark</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        
+    </header>
+    <!--container-->
+    <div class="container">
+        <div class="profile">
+            <div class="profile-info">
+                <h1 class="name">Abdul Saboor</h1>
+                <p class="description">I am a passionate web developer with a love for creating dynamic and responsive websites. My expertise lies in HTML, CSS, JavaScript, and I enjoy bringing creative designs to life.</p>
+            </div>
+            <div class="profile-pic">
+                <img src="F:/Abdullah/selflearn/portfolio/abdsa.jpg" alt="Your Name">
+            </div>
+        </div>
+    </div>
+
+
+    <!--slider-->
+     <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <h3>HTML</h3>
+                    <p>HTML is the standard markup language for creating web pages and web applications.</p>
+                </div>
+                <div class="slide">
+                    <h3>CSS</h3>
+                    <p>CSS describes how HTML elements are to be displayed on screen, paper, or in other media.</p>
+        
+                </div>
+                <div class="slide">
+                    <h3>JavaScript</h3>
+                    <p>JavaScript is a programming language that enables dynamic content and interactive features.</p>
+                </div>
+                <div class="slide">
+                    <h3>React</h3>
+                    <p>React is a JavaScript library for building user interfaces, particularly for single-page applications.</p>
+                </div>
+                <div class="slide">
+                    <h3>Node.js</h3>
+                    <p>Node.js allows JavaScript to be used for server-side scripting, enabling dynamic web page content.</p>
+                </div>
+                <div class="slide">
+                    <h3>Bootstrap</h3>
+                    <p>Bootstrap is a framework for developing responsive, mobile-first websites and web applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <script src="port.js"></script>
+</body>
+</html>

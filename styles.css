@@ -1,0 +1,363 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none; /* Remove bullet points */
+    position: relative;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px; /* Rounded borders for links */
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    background-color: #3498db; /* Background color on hover */
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease-in-out;
+    border-radius: 20px; /* Rounded border for dropdown */
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+    border-radius: 10px; /* Rounded borders for dropdown items */
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+    transform: translateX(10px);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border-radius: 5px; /* Rounded burger lines */
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: rgb(209, 52, 52);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-active li {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Adjust dropdown for mobile */
+    .dropdown-content {
+        position: relative;
+        background-color: #111;
+        box-shadow: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        position: relative;
+    }
+}
+
+/* Mid Section Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #333131; /* Dark background for better neon effect */
+    text-align: center;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adjusted width for more space */
+    gap: 400px; /* Larger gap between name section and image section */
+    flex-direction: row; /* Ensure horizontal layout */
+}
+
+.profile-info {
+    flex: 1;
+    text-align: left;
+    color: #fff; /* White text for contrast */
+}
+
+.profile-pic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100px; /* Square container size */
+    height: 400px; /* Square container size */
+    border-radius: 30px; /* Slightly rounded corners */
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0, 255, 255, 0.4); /* Shadow for depth */
+    margin-left: auto; /* Push image to the right */
+}
+
+.profile-pic img {
+    width: 110%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Ensures image covers the container */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); /* Neon border effect */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Hover effect */
+.profile-pic:hover img {
+    transform: scale(1.1); /* Slightly scale up the image */
+    box-shadow: 0 0 25px rgba(0, 255, 255, 1); /* Brighter neon effect */
+}
+
+.name {
+    font-size: 3rem; /* Larger font size */
+    color: #0ff; /* Neon cyan color */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8); /* Enhanced neon text effect */
+    animation: fadeInLeft 2s ease-in-out, neon 1.5s infinite alternate;
+}
+
+.description {
+    font-size: 1.4rem; /* Slightly adjusted font size */
+    color: #ddd; /* Light gray color */
+    line-height: 1.6;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Soft glow effect */
+    animation: fadeInRight 3s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px); /* Increased distance for more impact */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px); /* Increased distance for more impact */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6);
+    }
+}
+
+
+
+/* Slider Section Styling */
+.slider-section {
+    padding: 50px 20px;
+    background-color: #222; /* Dark gray background for the slider section */
+}
+
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px; /* Maximum width for the slider */
+    margin: auto;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+}
+
+.slide {
+    flex: 0 0 220px; /* Width of each slide */
+    padding: 20px;
+    background-color: #333; /* Dark gray background for slides */
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5); /* Neon effect shadow */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.slide:hover {
+    transform: scale(1.05); /* Slightly enlarge the slide on hover */
+    box-shadow: 0 6px 12px rgba(0, 255, 255, 1); /* Brighter neon effect on hover */
+}
+
+.slide h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #3498db; /* Blue color for slide titles */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8); /* Neon effect for titles */
+}
+.slide p {
+    font-size: 1rem;
+    color: #ddd; /* Light gray color for slide descriptions */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show full description on hover */
+.slide:hover p {
+    opacity: 1;
+}
