@@ -307,3 +307,87 @@ input:checked + .slider:before {
 }
 
 
+.sld {
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #00f;
+    border-radius: 10px;
+    background-color: #111;
+    box-shadow: 0 0 15px #00f;
+    position: relative;
+}
+
+.sld-track {
+    display: flex;
+    width: calc(300px * 6); /* Total width for all boxes */
+    animation: scroll 30s linear infinite;
+}
+
+.slid {
+    width: 300px;
+    height: 250px;
+    margin: 0 10px;
+    background: linear-gradient(135deg, #333, #444);
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.slid img.icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.slid h3 {
+    margin: 5px 0;
+    font-size: 1.5rem;
+}
+
+/* Hidden by default */
+.slid p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+}
+
+/* Hover Effect */
+.slid:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scale Effect on Hover */
+.slid:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #444, #333);
+}
+
+/* Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 6)); /* Move left by the width of all boxes */
+    }
+}
+
